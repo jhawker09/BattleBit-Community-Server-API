@@ -5,8 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityServerAPI", "CommunityServerAPI.csproj", "{787887A1-8AEE-43E4-AF9B-A3883DE04486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleBitAPI.Program", "..\BattleBitAPI.Program\BattleBitAPI.Program.csproj", "{96D55E1B-2711-47E2-9DA1-41B645F4FCF2}"
-EndProject
+#Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleBitAPI.Program", "..\BattleBitAPI.Program\BattleBitAPI.Program.csproj", "{96D55E1B-2711-47E2-9DA1-41B645F4FCF2}"
+#EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
