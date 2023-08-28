@@ -70,5 +70,8 @@ internal class MyPlayer : Player<MyPlayer>
 
 internal class MyGameServer : GameServer<MyPlayer>
 {
-
+   public override async Task OnConnected()
+   {
+        ServerSettings.CanVoteNight = false;
+   }
 }
