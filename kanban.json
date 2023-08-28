@@ -11,8 +11,16 @@
             "title": "To-Do",
             "tasks": [
                 {
-                    "text": "Test",
-                    "id": "cllu7b2lx000n4164zcu2iifg"
+                    "text": "**SERVER** - Log Management",
+                    "id": "clluacu2s000c41649n34wfup"
+                },
+                {
+                    "text": "**CORE** - Logging",
+                    "id": "cllua8uwt000b416473hvleuy"
+                },
+                {
+                    "text": "**CORE** - Player Stats (Server side)",
+                    "id": "cllua8d9e000a4164732mfxdh"
                 },
                 {
                     "text": "**SERVER** - Switch Docker",
@@ -69,5 +77,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1693187804121
+    "timestamp": 1693191262597
 }
