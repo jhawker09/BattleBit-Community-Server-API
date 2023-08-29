@@ -72,7 +72,12 @@ internal class MyGameServer : GameServer<MyPlayer>
 {
    public override async Task OnConnected()
    {
+        //Override for turning off night map voting.
         ServerSettings.CanVoteNight = false;
-        mResources._RoundSettings.PlayersToStart = 2
+        //Override for player starting count.
+        RoundSettings.PlayersToStart = 2;
+        //Override for Ticket counts.
+        //Write IF statement here for class of map size.
+
     }
 }
