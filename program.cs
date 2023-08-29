@@ -30,12 +30,12 @@ internal static class Program
 
     private static async Task OnGameServerDisconnected(GameServer<MyPlayer> arg)
     {
-        await Console.Out.WriteLineAsync($"Gameserver {arg.GameIP}:{arg.GamePort} connected");
+        await Console.Out.WriteLineAsync($"Gameserver {arg.GameIP}:{arg.GamePort} disconnected");
     }
 
     private static async Task OnGameServerConnected(GameServer<MyPlayer> arg)
     {
-        await Console.Out.WriteLineAsync($"Gameserver {arg.GameIP}:{arg.GamePort} disconnected");
+        await Console.Out.WriteLineAsync($"Gameserver {arg.GameIP}:{arg.GamePort} connected");
     }
 
     // With this function, you can require any game server that wants to connect to your API to send an API token.
@@ -73,5 +73,6 @@ internal class MyGameServer : GameServer<MyPlayer>
    public override async Task OnConnected()
    {
         ServerSettings.CanVoteNight = false;
-   }
+
+    }
 }
