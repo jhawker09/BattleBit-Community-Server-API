@@ -73,6 +73,6 @@ internal class MyGameServer : GameServer<MyPlayer>
    public override async Task OnConnected()
    {
         ServerSettings.CanVoteNight = false;
-
+        mResources._RoundSettings.PlayersToStart = 2
     }
 }
