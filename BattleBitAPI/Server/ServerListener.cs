@@ -882,7 +882,6 @@ namespace BattleBitAPI.Server
                         }
                         break;
                     }
-
                 case NetworkCommuncation.PlayerConnected:
                     {
                         if (stream.CanRead(8 + 2 + 4 + (1 + 1 + 1)))
@@ -962,11 +961,11 @@ namespace BattleBitAPI.Server
                                     server.OnPlayerLeftSquad((TPlayer)player, msquad);
                                 }
 
-                                @internal.SessionID = 0;
-                                @internal.GameServer = null;
-
                                 player.OnDisconnected();
                                 server.OnPlayerDisconnected((TPlayer)player);
+
+                                @internal.SessionID = 0;
+                                @internal.GameServer = null;
 
                                 if (this.LogLevel.HasFlag(LogLevel.Players))
                                     OnLog(LogLevel.Players, $"{player} has disconnected", player);
@@ -1444,11 +1443,15 @@ namespace BattleBitAPI.Server
                     }
                 case NetworkCommuncation.GameTick:
                     {
-                        if (stream.CanRead(4 + 4 + 4))
+                        if (stream.CanRead(12 + 12 + 1))
                         {
                             float decompressX = stream.ReadFloat();
                             float decompressY = stream.ReadFloat();
                             float decompressZ = stream.ReadFloat();
+
+                            float offsetX = stream.ReadFloat();
+                            float offsetY = stream.ReadFloat();
+                            float offsetZ = stream.ReadFloat();
 
                             int playerCount = stream.ReadInt8();
                             while (playerCount > 0)
@@ -1491,9 +1494,9 @@ namespace BattleBitAPI.Server
 
                                     @internal.Position = new Vector3()
                                     {
-                                        X = com_posX * decompressX,
-                                        Y = com_posY * decompressY,
-                                        Z = com_posZ * decompressZ,
+                                        X = (com_posX * decompressX) - offsetX,
+                                        Y = (com_posY * decompressY) - offsetY,
+                                        Z = (com_posZ * decompressZ) - offsetZ,
                                     };
                                     @internal.HP = newHP;
                                     @internal.Standing = standing;
