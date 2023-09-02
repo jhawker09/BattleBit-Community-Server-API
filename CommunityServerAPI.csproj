@@ -18,7 +18,11 @@
     <PackageProjectUrl>https://github.com/MrOkiDoki/BattleBit-Community-Server-API</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MrOkiDoki/BattleBit-Community-Server-API</RepositoryUrl>
     <PackageTags>BattleBit</PackageTags>
+<<<<<<< HEAD
     <Version>1.0.4.1</Version>
+=======
+    <Version>1.0.7.1</Version>
+>>>>>>> 23208589ac1f695932a2ea714eee409116b0628d
   </PropertyGroup>
 
   <ItemGroup>
